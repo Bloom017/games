@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>🎮 My Games</header>
+
+<div class="games">
+
+  <div class="card" onclick="openGame('games/bomber/')">
+    <img src="assets/thumb1.jpg">
+    <div class="card-content">
+      <div class="card-title">Game 1</div>
+      <div class="card-desc">Short description of your game</div>
+    </div>
+  </div>
+
+  <div class="card" onclick="openGame('games/game2/')">
+    <img src="assets/thumb2.jpg">
+    <div class="card-content">
+      <div class="card-title">Game 2</div>
+      <div class="card-desc">Another cool game</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Made with Unity • Hosted on GitHub Pages</footer>
+
+<script>
+  function openGame(path) {
+    window.location.href = path;
+  }
+</script>
+
+</body>
+</html>
