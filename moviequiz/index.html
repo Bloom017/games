@@ -7,7 +7,8 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     
-    
+    <!-- Yandex Games SDK -->
+	<script src="/sdk.js"></script>
   </head>
   <body>
     <div id="unity-container" style="position: absolute; width: 100%; height: 100%; left: 0%; top: 0%;">
@@ -21,7 +22,29 @@
       <div id="unity-warning"> </div>
       
     </div>
-    
+    <script>
+		YaGames
+			.init()
+			.then(ysdk => {
+				console.log('Yandex SDK initialized');
+				window.ysdk = ysdk;
+				initPlayer();
+				
+			});
+		
+							
+			
+		var player;
+
+		function initPlayer() {
+			ysdk.getPlayer({ scopes: true }).then(_player => {
+				player = _player;
+			  }).catch(err => {
+              // Ошибка при инициализации объекта Player.
+			  });
+		}
+				
+	</script>		
     
     <script>
 
